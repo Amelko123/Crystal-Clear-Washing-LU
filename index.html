@@ -3,257 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crystal Clear Washing | Professional Pressure Washing</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+    <title data-translate-key="title">Crystal Clear LU - Pressure Washing Website</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .portfolio-card {
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        .portfolio-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        /* Custom border colors for visual distinction */
+        .border-key-1 { border-color: #f59e0b; }
+        .border-key-2 { border-color: #10b981; }
+        .border-key-3 { border-color: #3b82f6; }
+        .border-key-4 { border-color: #8b5cf6; }
+        .border-key-5 { border-color: #ef4444; }
+    </style>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-spray-can"></i>
-                    </div>
-                    <div class="logo-text">Crystal <span>Clear</span> Washing</div>
-                </div>
-                <button class="mobile-toggle" id="mobileToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+    <!-- LANGUAGE SWITCH BAR -->
+    <div class="fixed top-0 left-0 right-0 z-[100] bg-gray-900 text-white text-center py-2 text-sm shadow-xl">
+        <span class="font-medium mr-4" data-translate-key="switch_lang_label">Switch Language:</span>
+        <button id="lang-en" class="text-sky-400 hover:text-sky-200 transition duration-150 underline mx-2 font-bold focus:outline-none">English (EN)</button>
+        <span class="text-gray-500">|</span>
+        <button id="lang-fr" class="text-sky-400 hover:text-sky-200 transition duration-150 underline mx-2 focus:outline-none">Français (FR)</button>
+    </div>
+
+    <!-- Padding for fixed switch bar -->
+    <div class="pt-10"></div>
+
+    <!-- 1. Header/Navigation -->
+    <header class="sticky top-10 z-50 bg-white shadow-lg border-b-4 border-sky-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-sky-600">
+                Crystal Clear LU
+            </div>
+            <nav class="space-x-4">
+                <a href="#hero" data-translate-key="nav_home" class="text-gray-700 hover:text-sky-600 transition duration-150 rounded-lg p-2 hidden sm:inline-block">Home</a>
+                <a href="#results" data-translate-key="nav_results" class="text-gray-700 hover:text-sky-600 transition duration-150 rounded-lg p-2">Results</a>
+                <a href="#testimonials" data-translate-key="nav_reviews" class="text-gray-700 hover:text-sky-600 transition duration-150 rounded-lg p-2">Reviews</a>
+                <a href="#contact" data-translate-key="nav_quote" class="bg-sky-600 hover:bg-sky-700 text-white font-medium py-2 px-4 rounded-lg transition duration-150 shadow-md">Get Quote</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Sparkling Clean Surfaces, Every Time</h1>
-                <p>Professional pressure washing services that transform your home or business with eco-friendly solutions and expert care.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn">Get Free Quote</a>
-                    <a href="#services" class="btn btn-outline">Our Services</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto">
 
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer a comprehensive range of pressure washing services to keep your property looking its absolute best.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>House Washing</h3>
-                        <p>Restore your home's exterior to its original beauty with our gentle yet effective house washing service.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-road"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Driveway & Walkway Cleaning</h3>
-                        <p>Remove oil stains, dirt, and grime from concrete, pavers, and asphalt surfaces.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-tree"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Deck & Patio Cleaning</h3>
-                        <p>Revitalize your outdoor living spaces with our specialized deck and patio cleaning service.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Commercial Properties</h3>
-                        <p>Keep your business premises clean and professional with our commercial pressure washing solutions.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-fence"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Fence Cleaning</h3>
-                        <p>Restore wood, vinyl, and composite fences to like-new condition without damaging the material.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Vehicle & Equipment</h3>
-                        <p>Professional cleaning for construction equipment, fleet vehicles, and heavy machinery.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- 2. Hero Section -->
+        <section id="hero" class="py-24 md:py-32 px-4 text-center bg-white">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                <span class="text-sky-600">Crystal Clear LU</span> - <span data-translate-key="hero_tagline">Sparkling Clean Results</span>
+            </h1>
+            <p data-translate-key="hero_body" class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto">
+                We restore the beauty of your home and business with professional, gentle, and highly effective pressure washing. Remove years of dirt, grime, and mildew—guaranteed.
+            </p>
+            <a href="#contact" data-translate-key="hero_cta" class="mt-10 inline-block bg-sky-600 hover:bg-sky-700 text-white text-lg font-semibold py-3 px-8 rounded-xl transition duration-300 shadow-xl transform hover:scale-[1.02]">
+                Book Your Transformation
+            </a>
+        </section>
 
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Why Choose Crystal Clear Washing?</h2>
-                    <p>With over 10 years of experience in the industry, we've perfected our techniques to deliver exceptional results while protecting your property. We use state-of-the-art equipment and eco-friendly cleaning solutions that are tough on dirt but gentle on surfaces.</p>
-                    <p>Our team is fully insured, professionally trained, and committed to 100% customer satisfaction. We take pride in our attention to detail and strive to exceed expectations on every job.</p>
-                    
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">500+</div>
-                            <div>Happy Customers</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div>Years Experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div>Satisfaction Guarantee</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">24/7</div>
-                            <div>Emergency Service</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-img">
-                    <div style="background: linear-gradient(45deg, var(--soap-blue), var(--soap-green)); height: 400px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: var(--deep-blue); font-size: 5rem;">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- 3. Property Results Section (Portfolio) -->
+        <section id="results" class="py-16 md:py-24 px-4 bg-gray-50">
+            <h2 data-translate-key="results_header" class="text-4xl md:text-5xl font-bold text-center mb-12 text-sky-600">Our 50+ Client Transformations</h2>
 
-    <!-- Testimonials Section -->
-    <section class="section testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>What Our Customers Say</h2>
-                <p>Don't just take our word for it - hear from our satisfied clients!</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>Crystal Clear Washing transformed my driveway! It looked brand new after their service. The team was professional, punctual, and left everything spotless.</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">MJ</div>
-                        <div>
-                            <h4>Michael Johnson</h4>
-                            <p>Homeowner</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>We've been using Crystal Clear for our commercial property for 3 years now. They're reliable, thorough, and their attention to detail is unmatched.</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">SR</div>
-                        <div>
-                            <h4>Sarah Rodriguez</h4>
-                            <p>Property Manager</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>My deck was covered in mold and looked terrible. After Crystal Clear worked their magic, it looks better than when it was first installed!</p>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-avatar">DT</div>
-                        <div>
-                            <h4>David Thompson</h4>
-                            <p>Homeowner</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
 
-    <!-- Contact Section -->
-   <!-- Contact Section (Static - No Form) -->
-<section class="section contact" id="contact">
-    <div class="container">
-        <div class="section-title">
-            <h2>Contact Us</h2>
-            <p>Ready to get started? Call or email us for a free quote!</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div>
-                        <h4>Phone</h4>
-                        <p><a href="tel:5551234567">(555) 123-4567</a></p>
+                <!-- Result Card 1: Paver Driveway -->
+                <div class="portfolio-card bg-white border-b-8 border-key-1">
+                    <img src="uploaded:picture3.jpg-eef3c914-a372-4708-9b3d-58ef102d5521" alt="Cleaned paver driveway leading to a house." class="w-full h-auto rounded-t-xl object-cover aspect-[4/3]">
+                    <div class="card-body p-4">
+                        <h3 data-translate-key="result1_title" class="text-xl font-semibold mb-1 text-gray-900">Surface Type: Paver Driveway</h3>
+                        <p data-translate-key="result1_area" class="text-sm text-amber-700 mb-2">Area Treated: 800 Square Feet</p>
+                        <p data-translate-key="result1_desc" class="text-sm text-gray-700">Removed ground-in dirt and moss from the pavers, restoring the natural color and sharp pattern.</p>
                     </div>
                 </div>
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h4>Email</h4>
-                        <p><a href="mailto:info@crystalclearwashing.com">info@crystalclearwashing.com</a></p>
-                    </div>
-                </div>
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <h4>Service Area</h4>
-                        <p>Greater Metro Area & Surrounding Communities</p>
+
+                <!-- Result Card 2: Hardwood Deck -->
+                <div class="portfolio-card bg-white border-b-8 border-key-2">
+                    <img src="uploaded:picture4.jpg-61200e63-9a98-4726-b781-10a0a3919352" alt="Restored wooden deck with outdoor furniture." class="w-full h-auto rounded-t-xl object-cover aspect-[4/3]">
+                    <div class="card-body p-4">
+                        <h3 data-translate-key="result2_title" class="text-xl font-semibold mb-1 text-gray-900">Surface Type: Hardwood Deck</h3>
+                        <p data-translate-key="result2_area" class="text-sm text-green-700 mb-2">Area Treated: 450 Square Feet</p>
+                        <p data-translate-key="result2_desc" class="text-sm text-gray-700">Soft wash restored the rich wood tone, ensuring it's safe and beautiful for outdoor living.</p>
                     </div>
                 </div>
-                <div class="contact-detail">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
+
+                <!-- Result Card 3: Stone Facade -->
+                <div class="portfolio-card bg-white border-b-8 border-key-3">
+                    <img src="uploaded:picture2.jpg-969ee837-60ea-473d-9d10-628e9c1ccef4" alt="Cleaned stone house facade and patio." class="w-full h-auto rounded-t-xl object-cover aspect-[4/3]">
+                    <div class="card-body p-4">
+                        <h3 data-translate-key="result3_title" class="text-xl font-semibold mb-1 text-gray-900">Surface Type: Stone Facade</h3>
+                        <p data-translate-key="result3_area" class="text-sm text-blue-700 mb-2">Area Treated: 2,500 Square Feet</p>
+                        <p data-translate-key="result3_desc" class="text-sm text-gray-700">Gentle cleaning removed atmospheric grime and biological growth from the stone, protecting the structure.</p>
                     </div>
-                    <div>
-                        <h4>Hours</h4>
-                        <p>Monday-Friday: 8am-6pm<br>Saturday: 9am-4pm</p>
+                </div>
+
+                <!-- Result Card 4: Concrete Driveway -->
+                <div class="portfolio-card bg-white border-b-8 border-key-4">
+                    <img src="uploaded:picture5.jpg-c74a1c6f-8c34-4f3a-8026-f6c2c2237e11" alt="Extremely clean and bright concrete driveway." class="w-full h-auto rounded-t-xl object-cover aspect-[4/3]">
+                    <div class="card-body p-4">
+                        <h3 data-translate-key="result4_title" class="text-xl font-semibold mb-1 text-gray-900">Surface Type: Concrete Driveway</h3>
+                        <p data-translate-key="result4_area" class="text-sm text-purple-700 mb-2">Area Treated: 1,800 Square Feet</p>
+                        <p data-translate-key="result4_desc" class="text-sm text-gray-700">High-power surface cleaning eliminated deep stains and discoloration, achieving a like-new finish.</p>
+                    </div>
+                </div>
+
+                <!-- Result Card 5: Wood Fence -->
+                <div class="portfolio-card bg-white border-b-8 border-key-5">
+                    <img src="uploaded:picture1.jpg-2dc759b0-2b32-40cf-b4a2-607f808b6352" alt="Weathered wood fence before cleaning." class="w-full h-auto rounded-t-xl object-cover aspect-[4/3]">
+                    <div class="card-body p-4">
+                        <h3 data-translate-key="result5_title" class="text-xl font-semibold mb-1 text-gray-900">Surface Type: Wood Fence</h3>
+                        <p data-translate-key="result5_area" class="text-sm text-red-700 mb-2">Area Treated: 150 Linear Feet</p>
+                        <p data-translate-key="result5_desc" class="text-sm text-gray-700">Removed heavy surface graying and mold, extending the life of the wood structure significantly.</p>
                     </div>
                 </div>
             </div>
-            <div class="contact-static">
-                <h3>Why Wait?</h3>
-                <p>We’re ready to make your property sparkle! Call now for a free estimate.</p>
-                <a href="tel:5551234567" class="btn" style="margin-top: 20px; display: inline-block;">Call Now</a>
+        </section>
+
+        <!-- 4. Testimonials Section -->
+        <section id="testimonials" class="py-16 md:py-24 px-4 bg-white">
+            <h2 data-translate-key="testimonials_header" class="text-4xl md:text-5xl font-bold text-center mb-12 text-sky-600">What Our Clients Say</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-100 p-6 rounded-xl border-t-8 border-sky-600 shadow-xl">
+                    <blockquote data-translate-key="testimonial1_quote" class="text-lg italic text-gray-700 mb-4">
+                        "I am absolutely thrilled with the results! The pressure washing service transformed my dingy, moldy siding into something that looks brand new. The team was professional and the quality of the cleaning is unmatched."
+                    </blockquote>
+                    <p data-translate-key="testimonial1_source" class="font-semibold text-sky-600">— Sarah K., Satisfied Homeowner, Raleigh</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-100 p-6 rounded-xl border-t-8 border-sky-600 shadow-xl">
+                    <blockquote data-translate-key="testimonial2_quote" class="text-lg italic text-gray-700 mb-4">
+                        "Our commercial concrete walkways haven't been this bright in years. Crystal Clear LU's deep cleaning service removed stubborn oil and gum stains. Their pressure washing technique is clearly superior—a fantastic investment for our property."
+                    </blockquote>
+                    <p data-translate-key="testimonial2_source" class="font-semibold text-sky-600">— Michael B., Property Manager, Durham</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-100 p-6 rounded-xl border-t-8 border-sky-600 shadow-xl">
+                    <blockquote data-translate-key="testimonial3_quote" class="text-lg italic text-gray-700 mb-4">
+                        "The scheduling was easy and the entire process was seamless. The house wash they performed was gentle yet incredibly effective. I highly recommend them for any exterior cleaning needs. They truly are the pressure washing experts!"
+                    </blockquote>
+                    <p data-translate-key="testimonial3_source" class="font-semibold text-sky-600">— David L., Happy Customer, Cary</p>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+
+        <!-- 5. Contact Section -->
+        <section id="contact" class="py-16 md:py-24 px-4 bg-sky-50">
+            <h2 data-translate-key="contact_header" class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">Ready for a Transformation?</h2>
+
+            <div class="text-center text-xl text-gray-700 mb-8">
+                <span data-translate-key="contact_email_label">Get a Free Quote:</span>
+                <a href="mailto:luclearwash@gmail.com" class="text-sky-600 font-bold hover:text-sky-700 transition duration-150">luclearwash@gmail.com</a>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-2xl border-t-4 border-sky-600">
+                <form action="https://formsubmit.co/luclearwash@gmail.com" method="POST" class="space-y-6">
+
+                    <div>
+                        <label for="name" data-translate-key="form_name_label" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 focus:border-sky-500 focus:ring-sky-500 text-gray-900 placeholder-gray-500"
+                               data-translate-key="form_name_placeholder" data-placeholder-target="placeholder"
+                               placeholder="Your Full Name">
+                    </div>
+
+                    <div>
+                        <label for="email" data-translate-key="form_email_label" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 focus:border-sky-500 focus:ring-sky-500 text-gray-900 placeholder-gray-500"
+                               data-translate-key="form_email_placeholder" data-placeholder-target="placeholder"
+                               placeholder="your@email.com">
+                    </div>
+
+                    <div>
+                        <label for="message" data-translate-key="form_message_label" class="block text-sm font-medium text-gray-700 mb-2">Message (Project Details)</label>
+                        <textarea id="message" name="message" rows="4" required
+                                  class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 focus:border-sky-500 focus:ring-sky-500 text-gray-900 placeholder-gray-500"
+                                  data-translate-key="form_message_placeholder" data-placeholder-target="placeholder"
+                                  placeholder="Tell us about your project: what needs cleaning (driveway, siding, deck, etc.) and its size."></textarea>
+                    </div>
+
+                    <button type="submit" data-translate-key="form_submit_cta"
+                            class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 rounded-lg transition duration-300 shadow-lg text-lg transform hover:scale-[1.01]">
+                        Send My Free Quote Request
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-300 py-8 text-center text-gray-600">
+        <p data-translate-key="footer_text">&copy; 2025 Crystal Clear LU. All rights reserved. | Simple HTML & Tailwind Design.</p>
+    </footer>
+
+    <!-- JavaScript for Language Switching -->
+    <script>
+        // Check for global variables (though not used for auth/db here, standard for Canvas environment)
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        // Set log level for Firebase (optional, but good practice if integrating)
+        // Since we are not using Firestore, we skip auth/db initialization.
+
+        // =========================================================================
+        // 1. Translation Data (Replacing a separate JSON file)
+        // =========================================================================
+        const translations = {
+            "en": {
+                "title": "Crystal Clear LU - Pressure Washing Website",
+                "switch_lang_label": "Switch Language:",
+                "nav_home": "Home",
+                "nav_results": "Results",
+                "nav_reviews": "Reviews",
+                "nav_quote": "Get Quote",
+                "hero_tagline": "Sparkling Clean Results",
+                "hero_body": "We restore the beauty of your home and business with professional, gentle, and highly effective pressure washing. Remove years of dirt, grime, and mildew—guaranteed.",
+                "hero_cta": "Book Your Transformation",
+
+                // Results Section
+                "results_header": "Our 50+ Client Transformations",
+                "result1_title": "Surface Type: Paver Driveway",
+                "result1_area": "Area Treated: 800 Square Feet",
+                "result1_desc": "Removed ground-in dirt and moss from the pavers, restoring the natural color and sharp pattern.",
+                "result2_title": "Surface Type: Hardwood Deck",
+                "result2_area": "Area Treated: 450 Square Feet",
+                "result2_desc": "Soft wash restored the rich wood tone, ensuring it's safe and beautiful for outdoor living.",
+                "result3_title": "Surface Type: Stone Facade",
+                "result3_area": "Area Treated: 2,500 Square Feet",
+                "result3_desc": "Gentle cleaning removed atmospheric grime and biological growth from the stone, protecting the structure.",
+                "result4_title": "Surface Type: Concrete Driveway",
+                "result4_area": "Area Treated: 1,800 Square Feet",
+                "result4_desc": "High-power surface cleaning eliminated deep stains and discoloration, achieving a like-new finish.",
+                "result5_title": "Surface Type: Wood Fence",
+                "result5_area": "Area Treated: 150 Linear Feet",
+                "result5_desc": "Removed heavy surface graying and mold, extending the life of the wood structure significantly.",
+
+                // Testimonials
+                "testimonials_header": "What Our Clients Say",
+                "testimonial1_quote": "\"I am absolutely thrilled with the results! The pressure washing service transformed my dingy, moldy siding into something that looks brand new. The team was professional and the quality of the cleaning is unmatched.\"",
+                "testimonial1_source": "— Sarah K., Satisfied Homeowner, Raleigh",
+                "testimonial2_quote": "\"Our commercial concrete walkways haven't been this bright in years. Crystal Clear LU's deep cleaning service removed stubborn oil and gum stains. Their pressure washing technique is clearly superior—a fantastic investment for our property.\"",
+                "testimonial2_source": "— Michael B., Property Manager, Durham",
+                "testimonial3_quote": "\"The scheduling was easy and the entire process was seamless. The house wash they performed was gentle yet incredibly effective. I highly recommend them for any exterior cleaning needs. They truly are the pressure washing experts!\"",
+                "testimonial3_source": "— David L., Happy Customer, Cary",
+
+                // Contact Form
+                "contact_header": "Ready for a Transformation?",
+                "contact_email_label": "Get a Free Quote:",
+                "form_name_label": "Name",
+                "form_name_placeholder": "Your Full Name",
+                "form_email_label": "Email",
+                "form_email_placeholder": "your@email.com",
+                "form_message_label": "Message (Project Details)",
+                "form_message_placeholder": "Tell us about your project: what needs cleaning (driveway, siding, deck, etc.) and its size.",
+                "form_submit_cta": "Send My Free Quote Request",
+                "footer_text": "&copy; 2025 Crystal Clear LU. All rights reserved. | Simple HTML & Tailwind Design.",
+            },
+            "fr": {
+                "title": "Crystal Clear LU - Site de Nettoyage Haute Pression",
+                "switch_lang_label": "Changer de Langue:",
+                "nav_home": "Accueil",
+                "nav_results": "Réalisations",
+                "nav_reviews": "Avis Clients",
+                "nav_quote": "Demander un Devis",
+                "hero_tagline": "Des Résultats Éclatants de Propreté",
+                "hero_body": "Nous redonnons de l'éclat à votre maison et à votre commerce grâce à un nettoyage haute pression professionnel, doux et très efficace. Éliminez des années de saleté, de crasse et de moisissure — garanti.",
+                "hero_cta": "Réservez Votre Transformation",
+
+                // Results Section (Using metric units)
+                "results_header": "Nos 50+ Transformations Clients",
+                "result1_title": "Type de Surface: Allée de Pavés",
+                "result1_area": "Surface Traitée: 74 Mètres Carrés",
+                "result1_desc": "Élimination de la saleté incrustée et de la mousse des pavés, rétablissant leur couleur naturelle et leur motif net.",
+                "result2_title": "Type de Surface: Terrasse en Bois",
+                "result2_area": "Surface Traitée: 42 Mètres Carrés",
+                "result2_desc": "Nettoyage doux qui a restauré la riche teinte du bois, le rendant sûr et magnifique pour la vie en plein air.",
+                "result3_title": "Type de Surface: Façade en Pierre",
+                "result3_area": "Surface Traitée: 232 Mètres Carrés",
+                "result3_desc": "Nettoyage délicat qui a éliminé la crasse et la croissance biologique de la pierre, protégeant ainsi la structure.",
+                "result4_title": "Type de Surface: Allée en Béton",
+                "result4_area": "Surface Traitée: 167 Mètres Carrés",
+                "result4_desc": "Nettoyage de surface haute pression qui a éliminé les taches profondes et la décoloration, offrant une finition comme neuve.",
+                "result5_title": "Type de Surface: Clôture en Bois",
+                "result5_area": "Surface Traitée: 45 Mètres Linéaires",
+                "result5_desc": "Élimination du grisaillement et de la moisissure, prolongeant considérablement la durée de vie de la structure en bois.",
+
+                // Testimonials
+                "testimonials_header": "Ce que Disent Nos Clients",
+                "testimonial1_quote": "\"Je suis absolument ravie des résultats! Le service de nettoyage haute pression a transformé mon revêtement extérieur terne et moisi en quelque chose qui a l'air neuf. L'équipe était professionnelle et la qualité du nettoyage est inégalée.\"",
+                "testimonial1_source": "— Sarah K., Propriétaire Satisfaite, Raleigh",
+                "testimonial2_quote": "\"Nos allées commerciales en béton n'ont pas été aussi brillantes depuis des années. Crystal Clear LU's deep cleaning service removed stubborn oil and gum stains. Leur technique est clairement supérieure — un investissement fantastique pour notre propriété.\"",
+                "testimonial2_source": "— Michael B., Gestionnaire Immobilier, Durham",
+                "testimonial3_quote": "\"La planification a été facile et le processus complet s'est déroulé sans accroc. Le lavage de maison qu'ils ont effectué était doux mais incroyablement efficace. Je les recommande fortement pour tous vos besoins de nettoyage extérieur. Ce sont vraiment les experts!\"",
+                "testimonial3_source": "— David L., Client Heureux, Cary",
+
+                // Contact Form
+                "contact_header": "Prêt pour une Transformation ?",
+                "contact_email_label": "Obtenez un Devis Gratuit:",
+                "form_name_label": "Nom",
+                "form_name_placeholder": "Votre Nom Complet",
+                "form_email_label": "E-mail",
+                "form_email_placeholder": "votre@email.com",
+                "form_message_label": "Message (Détails du Projet)",
+                "form_message_placeholder": "Parlez-nous de votre projet : quoi nettoyer (allée, façade, terrasse, etc.) et sa taille.",
+                "form_submit_cta": "Envoyer Ma Demande de Devis Gratuit",
+                "footer_text": "&copy; 2025 Crystal Clear LU. Tous droits réservés. | Conception HTML & Tailwind simple.",
+            }
+        };
+
+        // =========================================================================
+        // 2. Language Switching Logic
+        // =========================================================================
+
+        let currentLang = localStorage.getItem('lang') || 'en';
+
+        const setLanguage = (lang) => {
+            if (!translations[lang]) {
+                console.error("Language not found:", lang);
+                return;
+            }
+
+            // 1. Update localStorage and current state
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.documentElement.lang = lang;
+
+            // 2. Update all elements with data-translate-key
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                const text = translations[lang][key];
+
+                if (text) {
+                    const target = element.getAttribute('data-placeholder-target');
+
+                    if (target === 'placeholder') {
+                        // For form inputs/textareas
+                        element.setAttribute('placeholder', text);
+                    } else if (element.tagName === 'TITLE') {
+                        // For document title
+                        document.title = text;
+                    } else {
+                        // For all other visible text elements (p, h, span, button, a)
+                        element.textContent = text;
+                    }
+                }
+            });
+
+            // 3. Update active button style
+            document.getElementById('lang-en').classList.remove('font-bold', 'underline');
+            document.getElementById('lang-fr').classList.remove('font-bold', 'underline');
+            document.getElementById(`lang-${lang}`).classList.add('font-bold', 'underline');
+        };
+
+        // =========================================================================
+        // 3. Event Listeners and Initialization
+        // =========================================================================
+
+        window.onload = () => {
+            // Apply event listeners to the language buttons
+            document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+            document.getElementById('lang-fr').addEventListener('click', () => setLanguage('fr'));
+
+            // Initialize the language based on saved preference or default to English
+            setLanguage(currentLang);
+        };
+    </script>
 </body>
 </html>
