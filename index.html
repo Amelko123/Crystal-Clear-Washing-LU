@@ -166,6 +166,17 @@
                 <a href="mailto:luclearwash@gmail.com" class="text-sky-600 font-bold hover:text-sky-700 transition duration-150">luclearwash@gmail.com</a>
             </div>
 
+            <!-- SUCCESS ALERT BOX (Initially hidden) -->
+            <div id="success-alert" class="hidden max-w-lg mx-auto mb-6 p-4 rounded-lg bg-green-100 border border-green-400 text-green-800 shadow-md">
+                <div class="flex items-center">
+                    <!-- Green Checkmark Icon (SVG) -->
+                    <svg class="w-6 h-6 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <p data-translate-key="form_success_message" class="font-semibold">Success! Your quote request has been sent. We will contact you soon!</p>
+                </div>
+            </div>
+
             <!-- Contact Form -->
             <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-2xl border-t-4 border-sky-600">
                 <!-- ACTION URL: Static Forms endpoint -->
@@ -174,8 +185,8 @@
                     <!-- CRITICAL: UPDATED Access Key using your provided, permanent key -->
                     <input type="hidden" name="accessKey" value="sf_ak53a3bb7fg9i7c4669b00eg"> 
                     
-                    <!-- Redirects user back to the contact section after submission -->
-                    <input type="hidden" name="redirectTo" value="https://www.crystalclearlu.com/#contact">
+                    <!-- UPDATED REDIRECT URL to include success status parameter -->
+                    <input type="hidden" name="redirectTo" value="https://www.crystalclearlu.com/#contact?status=success">
 
                     <div>
                         <label for="name" data-translate-key="form_name_label" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
@@ -215,16 +226,13 @@
         <p data-translate-key="footer_text">&copy; 2025 Crystal Clear LU. All rights reserved. | Simple HTML & Tailwind Design.</p>
     </footer>
 
-    <!-- JavaScript for Language Switching -->
+    <!-- JavaScript for Language Switching and Form Success Message -->
     <script>
         // Check for global variables (though not used for auth/db here, standard for Canvas environment)
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 
-        // Set log level for Firebase (optional, but good practice if integrating)
-        // Since we are not using Firestore, we skip auth/db initialization.
-
         // =========================================================================
-        // 1. Translation Data (Replacing a separate JSON file)
+        // 1. Translation Data (Added new key for success message)
         // =========================================================================
         const translations = {
             "en": {
@@ -275,6 +283,7 @@
                 "form_message_label": "Message (Project Details)",
                 "form_message_placeholder": "Tell us about your project: what needs cleaning (driveway, siding, deck, etc.) and its size.",
                 "form_submit_cta": "Send My Free Quote Request",
+                "form_success_message": "Success! Your quote request has been sent. We will contact you soon!", // NEW KEY
                 "footer_text": "&copy; 2025 Crystal Clear LU. All rights reserved. | Simple HTML & Tailwind Design.",
             },
             "fr": {
@@ -325,6 +334,7 @@
                 "form_message_label": "Message (Détails du Projet)",
                 "form_message_placeholder": "Parlez-nous de votre projet : quoi nettoyer (allée, façade, terrasse, etc.) et sa taille.",
                 "form_submit_cta": "Envoyer Ma Demande de Devis Gratuit",
+                "form_success_message": "Succès! Votre demande de devis a été envoyée. Nous vous contacterons bientôt!", // NEW KEY
                 "footer_text": "&copy; 2025 Crystal Clear LU. Tous droits réservés. | Conception HTML & Tailwind simple.",
             }
         };
@@ -371,11 +381,42 @@
             document.getElementById('lang-en').classList.remove('font-bold', 'underline');
             document.getElementById('lang-fr').classList.remove('font-bold', 'underline');
             document.getElementById(`lang-${lang}`).classList.add('font-bold', 'underline');
+            
+            // 4. Update success message text if visible
+            const successElement = document.querySelector('#success-alert p');
+            if (successElement) {
+                successElement.textContent = translations[lang]['form_success_message'];
+            }
         };
 
         // =========================================================================
         // 3. Event Listeners and Initialization
         // =========================================================================
+
+        const checkFormStatus = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const successAlert = document.getElementById('success-alert');
+            const contactSection = document.getElementById('contact');
+
+            if (status === 'success') {
+                // Show the success alert
+                successAlert.classList.remove('hidden');
+
+                // Clear the URL parameter so the message doesn't persist on refresh
+                // This replaces the current URL with a clean one without a full page reload
+                const cleanUrl = window.location.pathname + window.location.hash;
+                window.history.replaceState(null, null, cleanUrl);
+                
+                // Scroll to the contact section so the user sees the message right away
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                // Ensure it remains hidden on a normal load
+                successAlert.classList.add('hidden');
+            }
+        }
 
         window.onload = () => {
             // Apply event listeners to the language buttons
@@ -384,6 +425,9 @@
 
             // Initialize the language based on saved preference or default to English
             setLanguage(currentLang);
+
+            // Check if a form submission status exists in the URL
+            checkFormStatus();
         };
     </script>
 </body>
